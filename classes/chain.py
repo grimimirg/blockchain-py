@@ -14,11 +14,11 @@ class Chain:
         self.chain.append(block)
 
     def isChainValid(self):
-        for idx, block in self.chain:
-            if block.isBlockValid() == False:
-                return False
+        for idx in range(len(self.chain)):
+           if self.chain[idx].isBlockValid() == False:
+               return False
 
-            if block.previousHash != chain[idx - 1].blockHash:
-                return False
+           if self.chain[idx].previousHash != self.chain[idx - 1].blockHash:
+               return False
 
         return True

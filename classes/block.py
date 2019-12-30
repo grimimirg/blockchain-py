@@ -1,4 +1,9 @@
 class Block:
+    index = None
+    blockHash = None
+    previousHash = None
+    data = None
+
     def __init__(self, index, previousHash, data):
         self.index = index
         self.blockHash = self.calculateBlockHash()
@@ -6,12 +11,14 @@ class Block:
         self.data = data
     
     def calculateBlockHash(self):
-        return hash(
-            self.data.senderKey +
-            self.data.receiverKey +
-            self.data.amount +
-            self.data.timestamp
-        )
+        if self.data is not None:
+            return hash(
+                self.data.senderKey +
+                self.data.receiverKey +
+                str(self.data.amount) +
+                str(self.data.timestamp)
+            )
+        return None
 
     def isBlockValid(self):
         return self.blockHash == self.calculateBlockHash()
