@@ -17,10 +17,11 @@ class Chain:
 
     def isChainValid(self):
         for idx in range(len(self.chain)):
-           if self.chain[idx].isBlockValid() == False:
-               return False
+            if idx != 0:
+                if self.chain[idx].isBlockValid() == False:
+                    return False
 
-           if self.chain[idx].previousHash != self.chain[idx - 1].blockHash:
-               return False
+                if self.chain[idx].previousHash != self.chain[idx - 1].blockHash:
+                    return False
 
         return True
