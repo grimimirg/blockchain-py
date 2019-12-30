@@ -8,7 +8,7 @@ class Chain:
         self.createGenesisBlock()
     
     def createGenesisBlock(self):
-        return Block(0, "genesisHash", "genesisHash", datetime);
+        return Block(0, "genesisHash", datetime);
 
     def addNewBlock(self, block):
         self.chain.append(block)

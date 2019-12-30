@@ -10,3 +10,5 @@ data = Data("senderKey", "receiverKey", 123456, datetime)
 block = Block(1, "genesisBlock", data)
 
 chain.addNewBlock(block)
+
+print(chain.isChainValid())
