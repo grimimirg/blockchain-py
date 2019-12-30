@@ -7,7 +7,7 @@ from datetime import datetime
 chain = Chain()
 
 data = Data("senderKey", "receiverKey", 123456, datetime)
-block = Block(1, "genesisBlock", data)
+block = Block(1, None, data)
 
 chain.addNewBlock(block)
 

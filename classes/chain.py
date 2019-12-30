@@ -10,7 +10,7 @@ class Chain:
         )
     
     def createGenesisBlock(self):
-        return Block(0, "genesisHash", None);
+        return Block(0, None, None);
 
     def addNewBlock(self, block):
         self.chain.append(block)
