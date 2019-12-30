@@ -6,17 +6,17 @@ class Block:
 
     def __init__(self, index, previousHash, data):
         self.index = index
+        self.data = data
         self.blockHash = self.calculateBlockHash()
         self.previousHash = previousHash
-        self.data = data
     
     def calculateBlockHash(self):
         if self.data is not None:
             return hash(
-                self.data.senderKey +
-                self.data.receiverKey +
-                str(self.data.amount) +
-                str(self.data.timestamp)
+                self.data.senderKey
+                + self.data.receiverKey
+                + str(self.data.amount)
+                + str(self.data.timestamp)
             )
         return None
 

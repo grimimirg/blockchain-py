@@ -5,10 +5,12 @@ class Chain:
     chain = []
 
     def __init__(self):
-        self.createGenesisBlock()
+        self.addNewBlock(
+            self.createGenesisBlock()
+        )
     
     def createGenesisBlock(self):
-        return Block(0, "genesisHash", datetime);
+        return Block(0, "genesisHash", None);
 
     def addNewBlock(self, block):
         self.chain.append(block)
